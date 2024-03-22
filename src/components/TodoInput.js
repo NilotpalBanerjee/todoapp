@@ -1,30 +1,34 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 function TodoInput(props) {
-    const [inputText,setInputText] = useState('');
-    const handleEnterPress = (e)=>{
-        if(e.keyCode===13){
-            props.addList(inputText)
-            setInputText("")
-        }
+  const [inputText, setInputText] = useState("");
+  const handleEnterPress = (e) => {
+    if (e.keyCode === 13) {
+      props.addList(inputText);
+      setInputText("");
     }
+  };
   return (
     <div className="input-container">
       <input
         type="text"
         className="input-box-todo"
-        placeholder="Enter your todo"
+        placeholder="Enter Your To Do List"
         value={inputText}
-        onChange={e=>{
-            setInputText(e.target.value)
+        onChange={(e) => {
+          setInputText(e.target.value);
         }}
         onKeyDown={handleEnterPress}
       />
-      <button className="add-btn" 
-      onClick={()=>{
-        props.addList(inputText)
-        setInputText("")
-      }}>+</button>      
+      <button
+        className="add-btn"
+        onClick={() => {
+          props.addList(inputText);
+          setInputText("");
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }
