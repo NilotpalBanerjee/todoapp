@@ -24,7 +24,7 @@ function App() {
             return (
               <Todolist
                 key={i}
-                index={i}
+                index={i} 
                 item={listItem}
                 deleteItem={deleteListItem}
               />
